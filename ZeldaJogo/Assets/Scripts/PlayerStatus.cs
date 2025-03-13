@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStatus : MonoBehaviour
+public abstract class PlayerStatus : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] float speed;
+
+    public float Speed { get => speed; set => speed = value; }
+
     void Start()
     {
         
