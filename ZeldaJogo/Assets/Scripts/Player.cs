@@ -5,9 +5,14 @@ using UnityEngine;
 public class Player : PlayerStatus
 {
     Rigidbody2D rb;
+    Animator animator;
+    SpriteRenderer spriteRenderer;
+    public Vector2 moveInput;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -15,6 +20,10 @@ public class Player : PlayerStatus
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
-        rb.velocity = new Vector2(horizontal, vertical) * Speed;
+        moveInput = new Vector2(horizontal, vertical);
+        rb.velocity = moveInput * Speed;
+
+        animator.SetFloat("Horizontal", horizontal);
+        animator.SetFloat("Vertical", vertical);
     }
 }
