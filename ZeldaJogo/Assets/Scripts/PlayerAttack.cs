@@ -17,7 +17,18 @@ public class PlayerAttack : PlayerStatus
         if (Input.GetButtonDown("Fire1"))
         {
             sword.SetActive(true);
-            sword.transform.position = player.transform.position + new Vector3(player.moveInput.x, player.moveInput.y, 0);
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            sword.transform.position = mousePos - transform.position;
+            sword.transform.rotation = Quaternion.Euler(0, 0, GetLookingPosition());
+            
         }
+    }
+    float GetLookingPosition()
+    {
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 direction = mousePos - transform.position;
+        direction = direction.normalized;
+        float angulo = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        return -angulo;
     }
 }
