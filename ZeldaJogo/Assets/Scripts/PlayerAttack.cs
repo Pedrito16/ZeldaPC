@@ -18,9 +18,8 @@ public class PlayerAttack : PlayerStatus
         {
             sword.SetActive(true);
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            sword.transform.position = mousePos - transform.position;
-            sword.transform.rotation = Quaternion.Euler(0, 0, GetLookingPosition());
-            
+            sword.transform.position = transform.position + new Vector3(player.moveInput.x, player.moveInput.y);
+            //sword.transform.rotation = Quaternion.Euler(0, 0, GetLookingPosition());
         }
     }
     float GetLookingPosition()
