@@ -16,10 +16,9 @@ public class PlayerAttack : PlayerStatus
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            sword.SetActive(true);
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 rotation = Vector3.left * player.moveInput.x + Vector3.down * player.moveInput.y;
+            sword.transform.rotation = Quaternion.LookRotation(Vector3.forward, rotation);
             sword.transform.position = transform.position + new Vector3(player.moveInput.x, player.moveInput.y);
-            //sword.transform.rotation = Quaternion.Euler(0, 0, GetLookingPosition());
         }
     }
     float GetLookingPosition()
