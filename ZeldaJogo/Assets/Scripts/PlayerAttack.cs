@@ -2,31 +2,48 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttack : PlayerStatus
+public class PlayerAttack : MonoBehaviour
 {
-    [SerializeField] GameObject sword;
+    [SerializeField] GameObject swordPrefab;
+    [SerializeField] float attackTime;
+    GameObject sword;
     Player player;
+    Coroutine attackRoutine;
+    [SerializeField] Vector2 lastPlayerMove;
+    private void Awake()
+    {
+        if(GetComponentInChildren<Sword>() == null)
+        {
+            sword = Instantiate(swordPrefab, transform);
+            sword.SetActive(false);
+            sword.transform.SetParent(transform, false);
+        }
+    }
     void Start()
     {
-        player = GetComponent<Player>();    
+        player = GetComponent<Player>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if(player.moveInput != Vector2.zero) 
+            lastPlayerMove = player.moveInput;
+        if (Input.GetButtonDown("Fire1") && lastPlayerMove != Vector2.zero && attackRoutine == null)
         {
-            Vector3 rotation = Vector3.left * player.moveInput.x + Vector3.down * player.moveInput.y;
-            sword.transform.rotation = Quaternion.LookRotation(Vector3.forward, rotation);
-            sword.transform.position = transform.position + new Vector3(player.moveInput.x, player.moveInput.y);
+            attackRoutine = StartCoroutine(Atacar());
         }
     }
-    float GetLookingPosition()
+    IEnumerator Atacar()
     {
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 direction = mousePos - transform.position;
-        direction = direction.normalized;
-        float angulo = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        return -angulo;
+        sword.SetActive(true);
+        Vector3 rotation = Vector3.left * lastPlayerMove.x + Vector3.down * lastPlayerMove.y;
+
+        sword.transform.rotation = Quaternion.LookRotation(Vector3.forward, rotation);
+        sword.transform.position = transform.position + new Vector3(lastPlayerMove.x, lastPlayerMove.y);
+
+        yield return new WaitForSeconds(attackTime);
+        sword.SetActive(false);
+        attackRoutine = null;
     }
 }
