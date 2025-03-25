@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0fd7873e78af3e44ea9acf0bb1e4fdc9
+guid: 6a76df62d2f2897408912a6276db2d07
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -129,7 +129,91 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: minecart_and_rails_0
+      name: pickup_items_animated 1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 625d13693b9af124fafcb39ec4821430
+      internalID: -835976750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickup_items_animated 1_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3f58b11d688cdc4eb5c6ad6e51eb47f
+      internalID: -1988768570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickup_items_animated 1_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbafbb863ab50ba4aa6c04aee742423d
+      internalID: 1629889670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickup_items_animated 1_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bf2e363111b0c044aa06bc36b9a537c
+      internalID: -722533810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickup_items_animated 1_4
       rect:
         serializedVersion: 2
         x: 0
@@ -143,14 +227,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59774b766ff9cf54b8ef04cc76a207e9
-      internalID: -744208489
+      spriteID: bf648c168a3e9b44f87f8894b176fe01
+      internalID: -1326456753
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minecart_and_rails_1
+      name: pickup_items_animated 1_5
       rect:
         serializedVersion: 2
         x: 16
@@ -164,14 +248,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22bac5428b0cc5541b3ec2a20768653f
-      internalID: 2135890015
+      spriteID: d7c4a1332cd2ad949823111f1bab8041
+      internalID: -835875089
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minecart_and_rails_2
+      name: pickup_items_animated 1_6
       rect:
         serializedVersion: 2
         x: 32
@@ -185,14 +269,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e260d3654895124e97dc361dbb41d9c
-      internalID: 27932622
+      spriteID: 8bd9b4d2114e0184d99e275047aaee3e
+      internalID: -1200225028
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minecart_and_rails_3
+      name: pickup_items_animated 1_7
       rect:
         serializedVersion: 2
         x: 48
@@ -206,77 +290,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd4c46a2462cf594881385368ca05db9
-      internalID: 900236341
+      spriteID: 255f5d2fe5322454b89141647ad1fa75
+      internalID: -747889020
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minecart_and_rails_4
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 96
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b76f9b164f1cba24f92884093b2c747c
-      internalID: -464255197
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: minecart_and_rails_5
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 96
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cf8c325dbe94734408bd15b6cf312260
-      internalID: 493638339
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: minecart_and_rails_6
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 96
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a8633d319c3da9144a87760a9b15a469
-      internalID: 1144995670
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: minecart_and_rails_7
+      name: pickup_items_animated 1_8
       rect:
         serializedVersion: 2
         x: 0
@@ -290,14 +311,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92f24b545be87754eb3e053b3a8b5c1c
-      internalID: -294364123
+      spriteID: e548c1416f1a32348b03fde597d473cb
+      internalID: 1389953361
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minecart_and_rails_8
+      name: pickup_items_animated 1_9
       rect:
         serializedVersion: 2
         x: 16
@@ -311,14 +332,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5e2170aff1f5e34698acc357fb074a9
-      internalID: -871910112
+      spriteID: 22a08ddf3cc2aaf43909a22c8aaa808d
+      internalID: -970988010
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minecart_and_rails_9
+      name: pickup_items_animated 1_10
       rect:
         serializedVersion: 2
         x: 32
@@ -332,14 +353,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9b2d3d43858e9949b6dc9d644b68cc9
-      internalID: 1896566613
+      spriteID: e5888e7358e5d434a974dbaf9dbba0d1
+      internalID: -856614656
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minecart_and_rails_10
+      name: pickup_items_animated 1_11
       rect:
         serializedVersion: 2
         x: 48
@@ -353,77 +374,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a362fc44a67f694bb0955215d9554f9
-      internalID: 1412146062
+      spriteID: d0cf52677a7207741b9f9764e1c5d9ca
+      internalID: 1933531973
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minecart_and_rails_11
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 818bb26dd9b2bc941b5ebf0419974eef
-      internalID: -1744065151
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: minecart_and_rails_12
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 407e12fe45326994eb208334ca1a0925
-      internalID: 1389759594
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: minecart_and_rails_13
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b864a7a368502094dbb1642b3d5c8970
-      internalID: 1112811643
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: minecart_and_rails_14
+      name: pickup_items_animated 1_12
       rect:
         serializedVersion: 2
         x: 0
@@ -437,14 +395,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 723dd117e2f7f2942b0e791c4190cf84
-      internalID: -1094384237
+      spriteID: 4d17df075170234429742d491d10d46d
+      internalID: 1207968530
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minecart_and_rails_15
+      name: pickup_items_animated 1_13
       rect:
         serializedVersion: 2
         x: 16
@@ -458,14 +416,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c5523cc472fb1e449a7aaa58ebd0b34
-      internalID: 556948204
+      spriteID: 47616b4c815d4bf45ab9ce33317ec452
+      internalID: 266479814
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minecart_and_rails_16
+      name: pickup_items_animated 1_14
       rect:
         serializedVersion: 2
         x: 32
@@ -479,14 +437,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d46db2bf2ff5f3148b97a5fd8f340ef1
-      internalID: 641218243
+      spriteID: 777d851faaa161c4b9ccfdcdfd95e0e9
+      internalID: 331352033
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minecart_and_rails_17
+      name: pickup_items_animated 1_15
       rect:
         serializedVersion: 2
         x: 48
@@ -500,77 +458,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5447e5aad06292b4791cf732da57826c
-      internalID: -536835422
+      spriteID: f736996b808269a40bd2ceac40869c73
+      internalID: 1451844295
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minecart_and_rails_18
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c894411ff7e48ac4ca8c546a275cf8f1
-      internalID: 999906013
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: minecart_and_rails_19
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6da79e38ae3071f4f9c4d03a4af6b066
-      internalID: 1312645851
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: minecart_and_rails_20
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 10a0eed880380d94e8f95dee51230380
-      internalID: 1818422294
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: minecart_and_rails_21
+      name: pickup_items_animated 1_16
       rect:
         serializedVersion: 2
         x: 0
@@ -584,14 +479,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb0bbac6421a03f4c82a69608cd9e0f9
-      internalID: 686841852
+      spriteID: 02c3d1ee77196e544a20e2e0054bdc25
+      internalID: -1334713261
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minecart_and_rails_22
+      name: pickup_items_animated 1_17
       rect:
         serializedVersion: 2
         x: 16
@@ -605,14 +500,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 99eb10cc622df8f4eaf07c42ee1d0edb
-      internalID: -1626684037
+      spriteID: e4fc6bc28d854324ebf343de2643ca89
+      internalID: 1128059050
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minecart_and_rails_23
+      name: pickup_items_animated 1_18
       rect:
         serializedVersion: 2
         x: 32
@@ -626,14 +521,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 523c8f06956ebb842ab62ba4f0dd264e
-      internalID: -1668588227
+      spriteID: a618d8334f616ee48b48305c2f9f17e6
+      internalID: 1041828892
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minecart_and_rails_24
+      name: pickup_items_animated 1_19
       rect:
         serializedVersion: 2
         x: 48
@@ -647,77 +542,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e23db0151479964cb4359261a6756a0
-      internalID: 385154669
+      spriteID: c915babf3274ce14cb12bacc726d6014
+      internalID: 2065843476
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minecart_and_rails_25
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9c0fc7744b7856a4d8e3b9d0c3987dd6
-      internalID: -857679300
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: minecart_and_rails_26
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e82c699b70cc2d74d8570639a32ba8b3
-      internalID: -1710381174
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: minecart_and_rails_27
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d5422fb4d26e98d47ab0ed3601dace4e
-      internalID: -1785746473
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: minecart_and_rails_28
+      name: pickup_items_animated 1_20
       rect:
         serializedVersion: 2
         x: 0
@@ -731,14 +563,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c3e99ebb6ee70148b72e3280e0f3725
-      internalID: -1155613688
+      spriteID: aa74682e65a616546bbd4af59caf1003
+      internalID: -110522269
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minecart_and_rails_29
+      name: pickup_items_animated 1_21
       rect:
         serializedVersion: 2
         x: 16
@@ -752,14 +584,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c677f9c403812b4409055ec813e66a90
-      internalID: -1700167955
+      spriteID: 0b5aaf0643a83b34f9552f5601a4ee56
+      internalID: 975630079
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minecart_and_rails_30
+      name: pickup_items_animated 1_22
       rect:
         serializedVersion: 2
         x: 32
@@ -773,14 +605,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 943fae9766e2b864eb43b37449476be9
-      internalID: 1758047073
+      spriteID: 7a52393d76a353f43aef36d337935c47
+      internalID: -1795105808
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minecart_and_rails_31
+      name: pickup_items_animated 1_23
       rect:
         serializedVersion: 2
         x: 48
@@ -794,35 +626,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1effcf68a2163704798b45fc21eb8842
-      internalID: 1702797966
+      spriteID: bf10f5dfcb4849e419a4d4163c991c4c
+      internalID: -290653955
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minecart_and_rails_32
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8ab12eb5be42912429598f94f9e67ba2
-      internalID: 1098949390
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: minecart_and_rails_33
+      name: pickup_items_animated 1_24
       rect:
         serializedVersion: 2
         x: 0
@@ -836,14 +647,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c7329e7ef7bf4ef4b930161df8047001
-      internalID: -570732141
+      spriteID: 7e09bc27a499322418a5d2033896f12f
+      internalID: -1765793265
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minecart_and_rails_34
+      name: pickup_items_animated 1_25
       rect:
         serializedVersion: 2
         x: 16
@@ -857,14 +668,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da492ddce9186b04d8ef22812d9af436
-      internalID: -1300430468
+      spriteID: c899aacc71b3dfa43a1c014e30e09e8e
+      internalID: -1213616193
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minecart_and_rails_35
+      name: pickup_items_animated 1_26
       rect:
         serializedVersion: 2
         x: 32
@@ -878,14 +689,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db28883ad188d45499a5fbd2cebd89e9
-      internalID: -1861893979
+      spriteID: 46057a34297d3474b9847eb4fca6d449
+      internalID: 1935036446
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minecart_and_rails_36
+      name: pickup_items_animated 1_27
       rect:
         serializedVersion: 2
         x: 48
@@ -899,35 +710,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93671bb4ab166574cb89c00ebbe498a4
-      internalID: 511768216
+      spriteID: 712acc15befc0e648b6dc23a4ad60dfc
+      internalID: 954741308
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minecart_and_rails_37
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1d2132a5e0abd1f48b47dd02cdd3e7b0
-      internalID: -666325025
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: minecart_and_rails_38
+      name: pickup_items_animated 1_28
       rect:
         serializedVersion: 2
         x: 0
@@ -941,14 +731,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 03e34ca58fd0b644293c1215c4f24d3e
-      internalID: 204614270
+      spriteID: 61c53265ee01d0b49bac275311485a5c
+      internalID: -1857027996
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minecart_and_rails_39
+      name: pickup_items_animated 1_29
       rect:
         serializedVersion: 2
         x: 16
@@ -962,14 +752,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b39dafb4b7a4a8d48ae79e86e3a30cd4
-      internalID: -145033774
+      spriteID: 4d1d4fd7639731b408e1ec84d930a523
+      internalID: 247697887
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minecart_and_rails_40
+      name: pickup_items_animated 1_30
       rect:
         serializedVersion: 2
         x: 32
@@ -983,14 +773,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e8ce8e8ef01e6847a4f68c169c5ffda
-      internalID: 1458339809
+      spriteID: f6ba821f2fa219740a50c8fddf5c80ff
+      internalID: 2093915364
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minecart_and_rails_41
+      name: pickup_items_animated 1_31
       rect:
         serializedVersion: 2
         x: 48
@@ -1004,29 +794,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f4914c713a4de34dbd8c39c0caac4c3
-      internalID: -902647120
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: minecart_and_rails_42
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6c8310a3f1f1fef47ad36cfeab538c66
-      internalID: -449118456
+      spriteID: 1d27f70e99f9a4d4ebf1fcfc377f6d4a
+      internalID: -37766415
       vertices: []
       indices: 
       edges: []
@@ -1042,49 +811,38 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      minecart_and_rails_29: -1700167955
-      minecart_and_rails_27: -1785746473
-      minecart_and_rails_14: -1094384237
-      minecart_and_rails_5: 493638339
-      minecart_and_rails_24: 385154669
-      minecart_and_rails_8: -871910112
-      minecart_and_rails_28: -1155613688
-      minecart_and_rails_22: -1626684037
-      minecart_and_rails_7: -294364123
-      minecart_and_rails_10: 1412146062
-      minecart_and_rails_11: -1744065151
-      minecart_and_rails_18: 999906013
-      minecart_and_rails_20: 1818422294
-      minecart_and_rails_31: 1702797966
-      minecart_and_rails_25: -857679300
-      minecart_and_rails_40: 1458339809
-      minecart_and_rails_37: -666325025
-      minecart_and_rails_39: -145033774
-      minecart_and_rails_30: 1758047073
-      minecart_and_rails_42: -449118456
-      minecart_and_rails_9: 1896566613
-      minecart_and_rails_16: 641218243
-      minecart_and_rails_38: 204614270
-      minecart_and_rails_26: -1710381174
-      minecart_and_rails_12: 1389759594
-      minecart_and_rails_3: 900236341
-      minecart_and_rails_36: 511768216
-      minecart_and_rails_6: 1144995670
-      minecart_and_rails_4: -464255197
-      minecart_and_rails_21: 686841852
-      minecart_and_rails_34: -1300430468
-      minecart_and_rails_19: 1312645851
-      minecart_and_rails_1: 2135890015
-      minecart_and_rails_15: 556948204
-      minecart_and_rails_13: 1112811643
-      minecart_and_rails_32: 1098949390
-      minecart_and_rails_33: -570732141
-      minecart_and_rails_23: -1668588227
-      minecart_and_rails_2: 27932622
-      minecart_and_rails_35: -1861893979
-      minecart_and_rails_0: -744208489
-      minecart_and_rails_17: -536835422
-      minecart_and_rails_41: -902647120
+      pickup_items_animated 1_22: -1795105808
+      pickup_items_animated 1_1: -1988768570
+      pickup_items_animated 1_8: 1389953361
+      pickup_items_animated 1_0: -835976750
+      pickup_items_animated 1_3: -722533810
+      pickup_items_animated 1_7: -747889020
+      pickup_items_animated 1_6: -1200225028
+      pickup_items_animated 1_14: 331352033
+      pickup_items_animated 1_18: 1041828892
+      pickup_items_animated 1_5: -835875089
+      pickup_items_animated 1_25: -1213616193
+      pickup_items_animated 1_28: -1857027996
+      pickup_items_animated 1_29: 247697887
+      pickup_items_animated 1_26: 1935036446
+      pickup_items_animated 1_30: 2093915364
+      pickup_items_animated 1_24: -1765793265
+      pickup_items_animated 1_2: 1629889670
+      pickup_items_animated 1_12: 1207968530
+      pickup_items_animated 1_17: 1128059050
+      pickup_items_animated 1_20: -110522269
+      pickup_items_animated 1_11: 1933531973
+      pickup_items_animated 1_31: -37766415
+      pickup_items_animated 1_19: 2065843476
+      pickup_items_animated 1_27: 954741308
+      pickup_items_animated 1_16: -1334713261
+      pickup_items_animated 1_23: -290653955
+      pickup_items_animated 1_13: 266479814
+      pickup_items_animated 1_9: -970988010
+      pickup_items_animated 1_21: 975630079
+      pickup_items_animated 1_10: -856614656
+      pickup_items_animated 1_4: -1326456753
+      pickup_items_animated 1_15: 1451844295
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
