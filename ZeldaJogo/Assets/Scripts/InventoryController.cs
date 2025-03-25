@@ -10,6 +10,7 @@ public class InventoryController : MonoBehaviour
     [SerializeField] Transform selectionBox;
     [SerializeField] Transform[] slots;
     [SerializeField] bool isActive;
+    [SerializeField] bool canMove;
     [SerializeField] int currentSelectPos;
     void Awake()
     {
@@ -19,6 +20,7 @@ public class InventoryController : MonoBehaviour
     {
         inventory.SetActive(false);
         selectionBox.position = slots[0].position;
+        canMove = true;
     }
     void Update()
     {
@@ -28,13 +30,15 @@ public class InventoryController : MonoBehaviour
             inventory.SetActive(!inventory.activeSelf);
             isActive = inventory.activeSelf;
         }
-        if (isActive && Input.GetKeyDown(KeyCode.E) && currentSelectPos < 3)
+        if (isActive && Input.GetKeyDown(KeyCode.E) && currentSelectPos < 3 && canMove)
         {
             currentSelectPos++;
+            canMove = false;
             StartCoroutine(moveSelect(slots[currentSelectPos].position));
-        }else if(isActive && Input.GetKeyDown(KeyCode.Q) && currentSelectPos > 0) 
+        }else if(isActive && Input.GetKeyDown(KeyCode.Q) && currentSelectPos > 0 && canMove) 
         {
             currentSelectPos--;
+            canMove = false;
             StartCoroutine(moveSelect(slots[currentSelectPos].position));
         }
     }
@@ -48,5 +52,6 @@ public class InventoryController : MonoBehaviour
             yield return null;
         }
         selectionBox.position = newPos;
+        canMove = true;
     }
 }
