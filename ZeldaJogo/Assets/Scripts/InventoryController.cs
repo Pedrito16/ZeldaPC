@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using TMPro;
 public class InventoryController : MonoBehaviour
@@ -14,9 +12,18 @@ public class InventoryController : MonoBehaviour
     [SerializeField] int currentSelectPos;
     [SerializeField] Transform[] equippedSlots;
     [SerializeField] TextMeshProUGUI useText;
+    public static InventoryController instance; 
     void Awake()
     {
-
+        if(instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
     private void Start()
     {
@@ -26,13 +33,13 @@ public class InventoryController : MonoBehaviour
     }
     void Update()
     {
-        currentSelectPos = Mathf.Clamp(currentSelectPos, 0, 3);
+        currentSelectPos = Mathf.Clamp(currentSelectPos, 0, 5);
         if(Input.GetKeyDown(KeyCode.T)) 
         {
             inventory.SetActive(!inventory.activeSelf);
             isActive = inventory.activeSelf;
         }
-        if (isActive && Input.GetKeyDown(KeyCode.E) && currentSelectPos < 3 && canMove)
+        if (isActive && Input.GetKeyDown(KeyCode.E) && currentSelectPos < 5 && canMove)
         {
             currentSelectPos++;
             canMove = false;
@@ -43,19 +50,19 @@ public class InventoryController : MonoBehaviour
             canMove = false;
             StartCoroutine(moveSelect(slots[currentSelectPos].position));
         }
-        if (slots[currentSelectPos].childCount > 0 && slots[currentSelectPos].GetChild(0).GetComponent<Item>() != null)
+        if (slots[currentSelectPos].childCount > 0 && slots[currentSelectPos].GetComponentInChildren<Item>() != null)
         {
-            
             if (Input.GetKeyDown(KeyCode.F))
             {
-
+                Item item = slots[currentSelectPos].GetComponentInChildren<Item>();
+                item.Usar();
             }
         }
     }
     IEnumerator moveSelect(Vector3 newPos)
     {
         float iterador = 0;
-        while(iterador <= 0.5f)
+        while(iterador <= 0.40f)
         {
             iterador += Time.deltaTime;
             selectionBox.position = Vector3.Lerp(selectionBox.position, newPos, iterador / velocidade);
@@ -63,5 +70,16 @@ public class InventoryController : MonoBehaviour
         }
         selectionBox.position = newPos;
         canMove = true;
+    }
+    public Transform FindAvailableSlot()
+    {
+        for (int i = 0; i < slots.Length - 2; i++)
+        {
+            if (slots[i].childCount <= 0)
+            {
+                return slots[i];
+            }
+        }
+        return null;
     }
 }

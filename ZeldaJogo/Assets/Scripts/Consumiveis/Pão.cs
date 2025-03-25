@@ -7,23 +7,20 @@ public class Pão : Item
     [SerializeField] Player player;
     [SerializeField] AudioClip eatingSound;
     [SerializeField] int regenLife;
-    AudioSource eatingSource;
+    [SerializeField] AudioSource eatingSource;
 
     void Start()
     {
-        eatingSource = GetComponentInChildren<AudioSource>();
         eatingSource.clip = eatingSound;
         player = FindObjectOfType<Player>();
         regenLife = 1;
+        print("KAKAKA");
     }
     public override void Usar()
     {
+        print("Ativou usar");
         eatingSource?.Play();
         player.Vida += regenLife;
-        Invoke("Destroy", 1.75f);
-    }
-    void Destroy()
-    {
         Destroy(gameObject);
     }
     // Update is called once per frame

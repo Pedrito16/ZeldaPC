@@ -5,19 +5,34 @@ using UnityEngine.UI;
 
 public class EspadaItem : Item
 {
-    Image image;
+    [SerializeField] Image image;
+    [SerializeField] Transform[] equippedSlots;
+    [SerializeField] bool isEquipped;
     private void Awake()
     {
         image = GetComponent<Image>();
     }
     void Start()
     {
-        image.sprite = ItemSprite;
-    }
-
-    public override void MoveToEquip(Vector3 newPos)
-    {
         
     }
-    
+
+    public override void Usar()
+    {
+        if(!isEquipped)
+        {
+            if (equippedSlots[0].childCount > 0)
+            {
+                transform.SetParent(equippedSlots[1], false);
+                isEquipped = true;
+            }
+            else if (equippedSlots[0].childCount <= 0)
+            {
+                transform.SetParent(equippedSlots[0], false);
+                isEquipped = true;
+            }
+        }
+        
+        
+    }
 }
