@@ -2,22 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pão : Consumivel
+public class Pão : Item
 {
     [SerializeField] Player player;
     [SerializeField] AudioClip eatingSound;
+    [SerializeField] int regenLife;
     AudioSource eatingSource;
+
     void Start()
     {
         eatingSource = GetComponentInChildren<AudioSource>();
         eatingSource.clip = eatingSound;
         player = FindObjectOfType<Player>();
-        RegenLife = 1;
+        regenLife = 1;
     }
-    public override void Consumir()
+    public override void Usar()
     {
         eatingSource?.Play();
-        player.Vida += RegenLife;
+        player.Vida += regenLife;
         Invoke("Destroy", 1.75f);
     }
     void Destroy()

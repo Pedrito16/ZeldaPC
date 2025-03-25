@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-
+using TMPro;
 public class InventoryController : MonoBehaviour
 {
     [SerializeField] float velocidade;
@@ -12,6 +12,8 @@ public class InventoryController : MonoBehaviour
     [SerializeField] bool isActive;
     [SerializeField] bool canMove;
     [SerializeField] int currentSelectPos;
+    [SerializeField] Transform[] equippedSlots;
+    [SerializeField] TextMeshProUGUI useText;
     void Awake()
     {
 
@@ -40,6 +42,14 @@ public class InventoryController : MonoBehaviour
             currentSelectPos--;
             canMove = false;
             StartCoroutine(moveSelect(slots[currentSelectPos].position));
+        }
+        if (slots[currentSelectPos].childCount > 0 && slots[currentSelectPos].GetChild(0).GetComponent<Item>() != null)
+        {
+            
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+
+            }
         }
     }
     IEnumerator moveSelect(Vector3 newPos)
