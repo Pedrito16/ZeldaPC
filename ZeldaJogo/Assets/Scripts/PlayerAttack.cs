@@ -35,6 +35,10 @@ public class PlayerAttack : MonoBehaviour
             attackRoutine = StartCoroutine(Atacar());
         }
     }
+    private void LateUpdate()
+    {
+        hasWeapon = InventoryController.instance.CheckIfHasWeapon();
+    }
     IEnumerator Atacar()
     {
         sword.SetActive(true);

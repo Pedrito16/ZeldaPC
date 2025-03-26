@@ -3,15 +3,22 @@ using UnityEngine;
 using TMPro;
 public class InventoryController : MonoBehaviour
 {
-    [SerializeField] float velocidade;
+    [Header("Essenciais")]
+    [SerializeField] Transform weaponSlot;
+    [SerializeField] Transform[] slots;
     [SerializeField] GameObject inventory;
     [SerializeField] Transform selectionBox;
-    [SerializeField] Transform[] slots;
+    [SerializeField] TextMeshProUGUI useText;
+
+    [Header("Configurações")]
+    [SerializeField] float velocidade;
+
+    [Header("Debug")]
     [SerializeField] bool isActive;
     [SerializeField] bool canMove;
     [SerializeField] int currentSelectPos;
-    [SerializeField] Transform weaponSlot;
-    [SerializeField] TextMeshProUGUI useText;
+    
+    
     public static InventoryController instance;
     void Awake()
     {
@@ -61,6 +68,10 @@ public class InventoryController : MonoBehaviour
             }
         }else
             useText.gameObject.SetActive(false);
+    }
+    public bool CheckIfHasWeapon()
+    {
+        return weaponSlot.childCount > 0;
     }
     IEnumerator moveSelect(Vector3 newPos)
     {
