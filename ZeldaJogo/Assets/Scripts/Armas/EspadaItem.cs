@@ -21,18 +21,20 @@ public class EspadaItem : Item
     {
         if(!isEquipped)
         {
-            if (equippedSlots[0].childCount > 0)
-            {
-                transform.SetParent(equippedSlots[1], false);
-                isEquipped = true;
-            }
-            else if (equippedSlots[0].childCount <= 0)
+            if (equippedSlots[0].childCount <= 0)
             {
                 transform.SetParent(equippedSlots[0], false);
                 isEquipped = true;
             }
         }
-        
-        
+        else if(isEquipped)
+        {
+            
+            if (InventoryController.instance.FindAvailableSlot() != null)
+            {
+                isEquipped = false;
+                transform.SetParent(InventoryController.instance.FindAvailableSlot(), false);
+            }
+        }
     }
 }

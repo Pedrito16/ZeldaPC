@@ -10,6 +10,7 @@ public class PlayerAttack : MonoBehaviour
     Player player;
     Coroutine attackRoutine;
     [SerializeField] Vector2 lastPlayerMove;
+    public bool hasWeapon;
     private void Awake()
     {
         if(GetComponentInChildren<Sword>() == null)
@@ -29,7 +30,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if(player.moveInput != Vector2.zero) 
             lastPlayerMove = player.moveInput;
-        if (Input.GetButtonDown("Fire1") && lastPlayerMove != Vector2.zero && attackRoutine == null)
+        if (Input.GetButtonDown("Fire1") && lastPlayerMove != Vector2.zero && attackRoutine == null && hasWeapon)
         {
             attackRoutine = StartCoroutine(Atacar());
         }
