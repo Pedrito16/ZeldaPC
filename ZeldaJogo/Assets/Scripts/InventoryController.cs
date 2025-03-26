@@ -10,11 +10,12 @@ public class InventoryController : MonoBehaviour
     [SerializeField] bool isActive;
     [SerializeField] bool canMove;
     [SerializeField] int currentSelectPos;
-    [SerializeField] Transform[] equippedSlots;
+    [SerializeField] Transform weaponSlot;
     [SerializeField] TextMeshProUGUI useText;
-    public static InventoryController instance; 
+    public static InventoryController instance;
     void Awake()
     {
+        useText.gameObject.SetActive(false);
         if(instance == null)
         {
             instance = this;
@@ -52,17 +53,19 @@ public class InventoryController : MonoBehaviour
         }
         if (slots[currentSelectPos].childCount > 0 && slots[currentSelectPos].GetComponentInChildren<Item>() != null)
         {
+            useText.gameObject.SetActive(true);
             if (Input.GetKeyDown(KeyCode.F))
             {
                 Item item = slots[currentSelectPos].GetComponentInChildren<Item>();
                 item.Usar();
             }
-        }
+        }else
+            useText.gameObject.SetActive(false);
     }
     IEnumerator moveSelect(Vector3 newPos)
     {
         float iterador = 0;
-        while(iterador <= 0.40f)
+        while(iterador <= 0.3f)
         {
             iterador += Time.deltaTime;
             selectionBox.position = Vector3.Lerp(selectionBox.position, newPos, iterador / velocidade);
