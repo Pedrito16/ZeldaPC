@@ -8,11 +8,15 @@ public class Player : PlayerStatus
     Animator animator;
     SpriteRenderer spriteRenderer;
     public Vector2 moveInput;
-    void Start()
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+    void Start()
+    {
+
     }
 
     // Update is called once per frame

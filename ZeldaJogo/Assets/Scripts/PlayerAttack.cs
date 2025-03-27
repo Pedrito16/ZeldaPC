@@ -2,16 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttack : MonoBehaviour
+public class PlayerAttack : MonoBehaviour, IDamageable
 {
     [SerializeField] GameObject swordPrefab;
     [SerializeField] float attackTime;
-    [SerializeField] GameObject escudo;
+    [SerializeField] float protectionTime;
+    [SerializeField] GameObject escudoPrefab;
+    GameObject escudo;
     GameObject sword;
     Player player;
     Coroutine attackRoutine;
     [SerializeField] Vector2 lastPlayerMove;
-    public bool hasWeapon;
+    [SerializeField] bool canBeDamaged;
+    [SerializeField] bool hasWeapon;
 
     private void Awake()
     {
@@ -21,6 +24,10 @@ public class PlayerAttack : MonoBehaviour
             sword.SetActive(false);
             sword.transform.SetParent(transform, false);
         }
+        escudo = Instantiate(escudoPrefab, transform);
+        escudo.transform.SetParent(transform, false);
+        escudo.transform.position = transform.position;
+        escudo.SetActive(false);
     }
     void Start()
     {
@@ -36,6 +43,18 @@ public class PlayerAttack : MonoBehaviour
         {
             attackRoutine = StartCoroutine(Atacar());
         }
+        if (Input.GetMouseButtonDown(1))
+        {
+            StartCoroutine(Protect());
+        }       
+    }
+    IEnumerator Protect()
+    {
+        canBeDamaged = false;
+        escudo.SetActive(true);
+        yield return new WaitForSeconds(protectionTime);
+        escudo.SetActive(false);
+        canBeDamaged = true;
     }
     private void LateUpdate()
     {
@@ -52,5 +71,10 @@ public class PlayerAttack : MonoBehaviour
         yield return new WaitForSeconds(attackTime);
         sword.SetActive(false);
         attackRoutine = null;
+    }
+
+    public void Damage(float damage)
+    {
+        throw new System.NotImplementedException();
     }
 }
