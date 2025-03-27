@@ -6,11 +6,13 @@ public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] GameObject swordPrefab;
     [SerializeField] float attackTime;
+    [SerializeField] GameObject escudo;
     GameObject sword;
     Player player;
     Coroutine attackRoutine;
     [SerializeField] Vector2 lastPlayerMove;
     public bool hasWeapon;
+
     private void Awake()
     {
         if(GetComponentInChildren<Sword>() == null)
