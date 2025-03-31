@@ -1,33 +1,72 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Timeline;
 
-public class Splitter : PlayerStatus    
+public class Splitter : PlayerStatus, IDamageable
 {
-    [SerializeField] float maxDistance;
+    [Header("Essentials")]
+    [SerializeField] GameObject projectile;
+    [SerializeField] float maxTime;
+    [Tooltip("Time for each shoot")]
+    public Queue<Rigidbody2D> pool = new Queue<Rigidbody2D>();
+
+    [Header("Configs")]
+    [SerializeField] int life;
+    [SerializeField] int maxObjectsPool;
+    [SerializeField] float projectileSpeed;
+    [SerializeField] float distanceShoot;
+
+    [Header("Debug")]
     [SerializeField] Transform playerTransform;
-    float distance;
+    [SerializeField] float timer;
+    void Awake()
+    {
+        playerTransform = FindObjectOfType<Player>().transform;
+    }
     void Start()
     {
-        
+        for(int i = 0; i < maxObjectsPool; i++)
+        {
+            GameObject projetil = Instantiate(projectile);
+            projetil.transform.SetParent(transform);
+            projetil.SetActive(false);
+            projetil.GetComponent<Axe>().splitter = this;
+            pool.Enqueue(projetil.GetComponent<Rigidbody2D>());
+        }
     }
     void Update()
     {
-        if(playerTransform != null) 
-            transform.position = Vector3.Lerp(transform.position, playerTransform.position, Time.deltaTime / Speed);
+        timer += Time.deltaTime;
+        if (timer >= maxTime)
+        {
+            ShootPlayerPos();
+            timer = 0;
+        }
+        transform.position = Vector3.Lerp(transform.position, playerTransform.position, Time.deltaTime / Speed);
+        if (life <= 0)
+            Destroy(gameObject);
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    #region ShootDirection
+    void ShootPlayerPos()
     {
-        if(collision.tag == "Player")
-            playerTransform = collision.transform;
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
+        Vector3 direction = (playerTransform.position).normalized;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
+        FireProjectile(angle);
+        FireProjectile(angle - 20);
+        FireProjectile(angle + 20);
     }
-    private void OnDrawGizmos()
+    void FireProjectile(float angle)
     {
-        Gizmos.DrawWireSphere(transform.position, maxDistance);
+        Rigidbody2D projetil = pool.Dequeue();
+        projetil.transform.position = transform.position;
+        projetil.gameObject.SetActive(true);
+        Quaternion rotation = Quaternion.Euler(0, 0, angle);
+        projetil.velocity = rotation * Vector3.right * projectileSpeed;
+    }
+    #endregion
+    public void Damage(float damage)
+    {
+        life -= (int)damage;
     }
 }

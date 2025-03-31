@@ -14,13 +14,11 @@ public class Pão : Item
         eatingSource.clip = eatingSound;
         player = FindObjectOfType<Player>();
         regenLife = 1;
-        print("KAKAKA");
     }
     public override void Usar()
     {
-        print("Ativou usar");
         eatingSource?.Play();
-        player.Vida += regenLife;
+        player.Life += regenLife;
         Destroy(gameObject);
     }
     // Update is called once per frame

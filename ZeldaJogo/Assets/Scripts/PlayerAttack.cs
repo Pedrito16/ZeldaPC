@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttack : MonoBehaviour, IDamageable
+public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] GameObject swordPrefab;
     [SerializeField] float attackTime;
@@ -13,7 +13,6 @@ public class PlayerAttack : MonoBehaviour, IDamageable
     Player player;
     Coroutine attackRoutine;
     [SerializeField] Vector2 lastPlayerMove;
-    [SerializeField] bool canBeDamaged;
     [SerializeField] bool hasWeapon;
 
     private void Awake()
@@ -50,11 +49,11 @@ public class PlayerAttack : MonoBehaviour, IDamageable
     }
     IEnumerator Protect()
     {
-        canBeDamaged = false;
+        player.canBeDamaged = false;
         escudo.SetActive(true);
         yield return new WaitForSeconds(protectionTime);
         escudo.SetActive(false);
-        canBeDamaged = true;
+        player.canBeDamaged = true;
     }
     private void LateUpdate()
     {
@@ -71,10 +70,5 @@ public class PlayerAttack : MonoBehaviour, IDamageable
         yield return new WaitForSeconds(attackTime);
         sword.SetActive(false);
         attackRoutine = null;
-    }
-
-    public void Damage(float damage)
-    {
-        throw new System.NotImplementedException();
     }
 }

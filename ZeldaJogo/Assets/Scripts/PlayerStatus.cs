@@ -7,7 +7,7 @@ public abstract class PlayerStatus : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] int vida;
     public float Speed { get => speed; set => speed = value; }
-    public int Vida { get => vida; set => vida = value; }
+    public int Life { get => vida; set => vida = value; }
 
     void Start()
     {

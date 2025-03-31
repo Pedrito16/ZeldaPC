@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
-public class Player : PlayerStatus
+public class Player : PlayerStatus, IDamageable
 {
     Rigidbody2D rb;
     Animator animator;
     SpriteRenderer spriteRenderer;
     public Vector2 moveInput;
+    public bool canBeDamaged;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -34,5 +35,11 @@ public class Player : PlayerStatus
     {
         if (collision.gameObject.layer == 3)
             Destroy(collision.gameObject);
+    }
+
+    public void Damage(float damage)
+    {
+        if(canBeDamaged)
+        Life -= (int)damage;
     }
 }
