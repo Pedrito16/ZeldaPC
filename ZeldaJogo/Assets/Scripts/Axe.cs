@@ -29,7 +29,7 @@ public class Axe : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Player" && collision.GetComponent<Player>().canBeDamaged)
+        if(collision.tag == "Player")
         {
             gameObject.SetActive(false);
             rb.velocity = Vector3.zero;

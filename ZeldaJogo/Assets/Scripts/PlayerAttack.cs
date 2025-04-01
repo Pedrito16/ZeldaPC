@@ -49,11 +49,11 @@ public class PlayerAttack : MonoBehaviour
     }
     IEnumerator Protect()
     {
-        player.canBeDamaged = false;
+        player.isShielded = true;
         escudo.SetActive(true);
         yield return new WaitForSeconds(protectionTime);
         escudo.SetActive(false);
-        player.canBeDamaged = true;
+        player.isShielded = false;
     }
     private void LateUpdate()
     {

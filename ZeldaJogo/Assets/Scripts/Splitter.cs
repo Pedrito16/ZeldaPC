@@ -11,7 +11,6 @@ public class Splitter : PlayerStatus, IDamageable
     public Queue<Rigidbody2D> pool = new Queue<Rigidbody2D>();
 
     [Header("Configs")]
-    [SerializeField] int life;
     [SerializeField] int maxObjectsPool;
     [SerializeField] float projectileSpeed;
     [SerializeField] float distanceShoot;
@@ -43,7 +42,7 @@ public class Splitter : PlayerStatus, IDamageable
             timer = 0;
         }
         transform.position = Vector3.Lerp(transform.position, playerTransform.position, Time.deltaTime / Speed);
-        if (life <= 0)
+        if (Life <= 0)
             Destroy(gameObject);
     }
     #region ShootDirection
@@ -67,6 +66,6 @@ public class Splitter : PlayerStatus, IDamageable
     #endregion
     public void Damage(float damage)
     {
-        life -= (int)damage;
+        Life -= (int)damage;
     }
 }

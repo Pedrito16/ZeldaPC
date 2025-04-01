@@ -18,7 +18,7 @@ public class Pão : Item
     public override void Usar()
     {
         eatingSource?.Play();
-        player.Life += regenLife;
+        player.RegenLife(regenLife);
         Destroy(gameObject);
     }
     // Update is called once per frame

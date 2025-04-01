@@ -191,6 +191,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &92458416 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 92458416, guid: fa2e88c1be1181c4bacff82d00ac4528, type: 3}
+  m_PrefabInstance: {fileID: 2333907707569707878}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &211436379 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 211436379, guid: fa2e88c1be1181c4bacff82d00ac4528, type: 3}
+  m_PrefabInstance: {fileID: 2333907707569707878}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &453738873
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,6 +297,41 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &709650406 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 709650406, guid: fa2e88c1be1181c4bacff82d00ac4528, type: 3}
+  m_PrefabInstance: {fileID: 2333907707569707878}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1821893525 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1821893525, guid: fa2e88c1be1181c4bacff82d00ac4528, type: 3}
+  m_PrefabInstance: {fileID: 2333907707569707878}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1821893527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821893525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb9c18afb5716d847bbc9f9c8c1edd25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hearts:
+  - {fileID: 92458416}
+  - {fileID: 211436379}
+  - {fileID: 709650406}
+  sprites:
+  - {fileID: 21300000, guid: f6c485d209587ef42ac81be84e5b524c, type: 3}
+  - {fileID: 21300000, guid: 80fad6eda4e0a644f9c83beefce9846c, type: 3}
 --- !u!1 &2033160789
 GameObject:
   m_ObjectHideFlags: 0
@@ -376,11 +433,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  vida: 0
+  vida: 3
   projectile: {fileID: 2631071660047988836, guid: 26ba3165cbf615b40b96d67db0d43032, type: 3}
   maxTime: 3
-  life: 3
-  maxObjectsPool: 9
+  maxObjectsPool: 12
   projectileSpeed: 5
   distanceShoot: 10
   playerTransform: {fileID: 0}
@@ -558,6 +614,10 @@ PrefabInstance:
     - target: {fileID: 7162505336690184332, guid: 316deeb1ac5fa1341a7c1081fa613e52, type: 3}
       propertyPath: vida
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7162505336690184332, guid: 316deeb1ac5fa1341a7c1081fa613e52, type: 3}
+      propertyPath: invencibilityTime
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 7162505336690184333, guid: 316deeb1ac5fa1341a7c1081fa613e52, type: 3}
       propertyPath: m_Name

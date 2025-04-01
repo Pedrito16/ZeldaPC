@@ -4,23 +4,23 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Player : PlayerStatus, IDamageable
 {
+    public delegate  void TakeDamage();
+    public TakeDamage takeDamage;
+    [SerializeField] float invencibilityTime;
     Rigidbody2D rb;
     Animator animator;
     SpriteRenderer spriteRenderer;
     public Vector2 moveInput;
-    public bool canBeDamaged;
+
+    public bool canRegenLife;
+    public bool isShielded;
+    public bool isInvencible;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
@@ -31,15 +31,24 @@ public class Player : PlayerStatus, IDamageable
         animator.SetFloat("Horizontal", horizontal);
         animator.SetFloat("Vertical", vertical);
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    IEnumerator Invencibility()
     {
-        if (collision.gameObject.layer == 3)
-            Destroy(collision.gameObject);
+        isInvencible = true;
+        yield return new WaitForSeconds(invencibilityTime);
+        isInvencible = false;
     }
-
     public void Damage(float damage)
     {
-        if(canBeDamaged)
-        Life -= (int)damage;
+        if(!isShielded && !isInvencible)
+        {
+            Life -= (int)damage;
+            takeDamage?.Invoke();
+            StartCoroutine(Invencibility());
+        }
+    }
+    public void RegenLife(int quantity)
+    {
+        Life += quantity;
+        canRegenLife = true;
     }
 }
