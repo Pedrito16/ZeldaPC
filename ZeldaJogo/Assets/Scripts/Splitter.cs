@@ -15,6 +15,9 @@ public class Splitter : PlayerStatus, IDamageable
     [SerializeField] float projectileSpeed;
     [SerializeField] float distanceShoot;
 
+    [Header("Optional")]
+    [SerializeField] GameObject item;
+
     [Header("Debug")]
     [SerializeField] Transform playerTransform;
     [SerializeField] float timer;
@@ -43,7 +46,10 @@ public class Splitter : PlayerStatus, IDamageable
         }
         transform.position = Vector3.Lerp(transform.position, playerTransform.position, Time.deltaTime / Speed);
         if (Life <= 0)
+        {
+            DropItemOnDeath();
             Destroy(gameObject);
+        }
     }
     #region ShootDirection
     void ShootPlayerPos()
@@ -64,6 +70,17 @@ public class Splitter : PlayerStatus, IDamageable
         projetil.velocity = rotation * Vector3.right * projectileSpeed;
     }
     #endregion
+    public override void DropItemOnDeath()
+    {
+        if(item != null)
+        {
+            int randomNumber = Random.Range(1, 10);
+            if (randomNumber <= 4)
+            {
+                Instantiate(item, transform.position, transform.rotation);
+            }
+        }
+    }
     public void Damage(float damage)
     {
         Life -= (int)damage;

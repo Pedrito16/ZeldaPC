@@ -6,10 +6,10 @@ using UnityEngine;
 public class GiveDamage : MonoBehaviour
 {
     [SerializeField] int damage;
-    [SerializeField] string dontAttackName;
+    string dontAttackName;
     void Start()
     {
-        
+        dontAttackName = gameObject.tag;
     }
 
     
@@ -21,7 +21,7 @@ public class GiveDamage : MonoBehaviour
     {
         if(collision.gameObject.TryGetComponent(out IDamageable damageable))
         {
-            if(collision.name != dontAttackName)
+            if(collision.tag != dontAttackName)
             damageable.Damage(damage);
         }
     }

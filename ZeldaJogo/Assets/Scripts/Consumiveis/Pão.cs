@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Pão : Item
 {
-    [SerializeField] Player player;
+    [SerializeField] public Player player;
     [SerializeField] AudioClip eatingSound;
     [SerializeField] int regenLife;
     [SerializeField] AudioSource eatingSource;
 
     void Start()
     {
+        eatingSource = InventoryController.instance.audioSource;
         eatingSource.clip = eatingSound;
-        player = FindObjectOfType<Player>();
         regenLife = 1;
     }
     public override void Usar()

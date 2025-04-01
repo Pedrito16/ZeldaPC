@@ -9,14 +9,8 @@ public abstract class PlayerStatus : MonoBehaviour
     public float Speed { get => speed; set => speed = value; }
     public int Life { get => vida; set => vida = value; }
 
-    void Start()
+    public virtual void DropItemOnDeath()
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

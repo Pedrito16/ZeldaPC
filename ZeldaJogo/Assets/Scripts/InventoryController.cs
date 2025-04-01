@@ -9,6 +9,7 @@ public class InventoryController : MonoBehaviour
     [SerializeField] GameObject inventory;
     [SerializeField] Transform selectionBox;
     [SerializeField] TextMeshProUGUI useText;
+    [SerializeField] public AudioSource audioSource;
 
     [Header("Configurações")]
     [SerializeField] float velocidade;
@@ -22,6 +23,7 @@ public class InventoryController : MonoBehaviour
     public static InventoryController instance;
     void Awake()
     {
+        audioSource = GetComponentInChildren<AudioSource>();
         useText.gameObject.SetActive(false);
         if(instance == null)
         {
