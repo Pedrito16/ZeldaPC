@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Splitter : PlayerStatus, IDamageable
@@ -21,9 +22,18 @@ public class Splitter : PlayerStatus, IDamageable
     [Header("Debug")]
     [SerializeField] Transform playerTransform;
     [SerializeField] float timer;
+    
+    //variaveis invisiveis
+    SpriteRenderer spriteRenderer;
+    Rigidbody2D rb;
+    Vector3 direction;
     void Awake()
     {
+        rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         playerTransform = FindObjectOfType<Player>().transform;
+        direction = playerTransform.position;
+        direction = direction.normalized;
     }
     void Start()
     {
@@ -38,13 +48,29 @@ public class Splitter : PlayerStatus, IDamageable
     }
     void Update()
     {
+        float distance = transform.position.x - playerTransform.position.x;
+        if ( distance > 0) 
+            spriteRenderer.flipX = true;
+        else if(distance < 0)
+            spriteRenderer.flipX = false;
+        direction = playerTransform.position - transform.position;
+        direction = direction.normalized;
+        if (Vector2.Distance(transform.position, playerTransform.position) > 0.5f)
+        {
+            rb.velocity = direction * Speed;
+        }
+        else
+            rb.velocity = Vector2.zero;
+
+
         timer += Time.deltaTime;
         if (timer >= maxTime)
         {
+            
             ShootPlayerPos();
             timer = 0;
         }
-        transform.position = Vector3.Lerp(transform.position, playerTransform.position, Time.deltaTime / Speed);
+        
         if (Life <= 0)
         {
             DropItemOnDeath();
@@ -54,7 +80,10 @@ public class Splitter : PlayerStatus, IDamageable
     #region ShootDirection
     void ShootPlayerPos()
     {
-        Vector3 direction = (playerTransform.position).normalized;
+        //direction = playerTransform.position;
+        //direction = direction.normalized;
+
+        
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
         FireProjectile(angle);
