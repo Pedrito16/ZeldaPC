@@ -9,6 +9,8 @@ TagManager:
   - Book
   - Sword
   - Projetil
+  - Pressionavel
+  - Bat
   layers:
   - Default
   - TransparentFX

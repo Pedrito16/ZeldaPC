@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/Scenes/N\xE3o\xE9otestedopedro.unity"
     guid: 446e4f28b336b53418ab20d5cd2be71d
+  - enabled: 1
+    path: Assets/Scenes/Fim.unity
+    guid: 1044028b263b8794c85a9236078b5408
   m_configObjects: {}

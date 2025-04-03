@@ -5,14 +5,25 @@ public class PlayerDie : MonoBehaviour
 {
     [SerializeField] GameObject dieScreen;
     [SerializeField] GameObject inventoryMenu;
+    [SerializeField] AudioSource source;
+    [SerializeField] AudioClip loseSound;
+    bool oneTime;
     void Start()
     {
+        oneTime = true;
+        source.clip = loseSound;
         dieScreen.SetActive(false);
     }
     void Die()
     {
-        dieScreen.SetActive(true);
-        inventoryMenu.SetActive(false);
+        if (oneTime)
+        {
+            source.PlayOneShot(loseSound);
+            dieScreen.SetActive(true);
+            inventoryMenu.SetActive(false);
+            oneTime = false;
+        }
+        
     }
     public void Restart()
     {

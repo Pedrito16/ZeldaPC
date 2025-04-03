@@ -22,6 +22,8 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] Vector2 lastPlayerMove;
     [SerializeField] bool hasWeapon;
     [SerializeField] bool canProtect;
+    [SerializeField] bool canShoot;
+    [SerializeField] float timer;
     //variaveis invisiveis
     Coroutine attackRoutine;
     GameObject escudo;
@@ -53,6 +55,7 @@ public class PlayerAttack : MonoBehaviour
     void Start()
     {
         player = GetComponent<Player>();
+        canShoot = true;
     }
     void Update()
     {
@@ -63,23 +66,30 @@ public class PlayerAttack : MonoBehaviour
             Item arma = InventoryController.instance.CheckIfHasWeapon();
             if (arma.CompareTag("Book"))
             {
-                StartCoroutine(SpellShoot());
+                if (canShoot)
+                {
+                    StartCoroutine(SpellShoot());
+                }
             }
             else
             {
                 attackRoutine = StartCoroutine(Atacar());
             }
         }
+        if (!canProtect)
+        {
+            timer += Time.deltaTime;
+            if (timer >= protectionCooldown)
+            {
+                canProtect = true;
+                timer = 0;
+            }
+        }
         if (Input.GetMouseButtonDown(1) && canProtect)
         {
+            canProtect = false;
             StartCoroutine(Protect());
         }       
-    }
-    IEnumerator ProtectionCooldown()
-    {
-        canProtect = false;
-        yield return new WaitForSeconds(protectionCooldown);
-        canProtect = true;
     }
     IEnumerator Protect()
     {
@@ -88,7 +98,6 @@ public class PlayerAttack : MonoBehaviour
         yield return new WaitForSeconds(protectionTime);
         escudo.SetActive(false);
         player.isShielded = false;
-        StartCoroutine(ProtectionCooldown());
     }
     private void LateUpdate()
     {
@@ -96,6 +105,7 @@ public class PlayerAttack : MonoBehaviour
     }
     IEnumerator SpellShoot()
     {
+        canShoot = false;
         GameObject tiro = Instantiate(projectile);
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Rigidbody2D projectileRb = tiro.GetComponent<Rigidbody2D>();
@@ -108,6 +118,7 @@ public class PlayerAttack : MonoBehaviour
         projectileRb.velocity = direction * projectileSpeed;
         yield return new WaitForSeconds(0.75f);
         book.SetActive(false);
+        canShoot = true;
     }
     IEnumerator Atacar()
     {

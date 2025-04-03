@@ -34,10 +34,11 @@ public class InventoryController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        
     }
     private void Start()
     {
-        inventory.SetActive(false);
+        inventory.SetActive(isActive);
         selectionBox.position = slots[0].position;
         canMove = true;
     }
@@ -80,8 +81,8 @@ public class InventoryController : MonoBehaviour
         float iterador = 0;
         while(iterador <= 0.3f)
         {
-            iterador += Time.deltaTime;
             selectionBox.position = Vector3.Lerp(selectionBox.position, newPos, iterador / velocidade);
+            iterador += Time.deltaTime; 
             yield return null;
         }
         selectionBox.position = newPos;

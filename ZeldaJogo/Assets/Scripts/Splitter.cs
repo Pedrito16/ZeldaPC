@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Splitter : PlayerStatus, IDamageable
@@ -15,11 +14,13 @@ public class Splitter : PlayerStatus, IDamageable
     [SerializeField] int maxObjectsPool;
     [SerializeField] float projectileSpeed;
     [SerializeField] float distanceShoot;
-
+    [SerializeField] AudioClip damageSound;
+    
     [Header("Optional")]
     [SerializeField] GameObject item;
 
     [Header("Debug")]
+    [SerializeField] AudioSource source;
     [SerializeField] Transform playerTransform;
     [SerializeField] float timer;
     
@@ -29,6 +30,8 @@ public class Splitter : PlayerStatus, IDamageable
     Vector3 direction;
     void Awake()
     {
+        source = GetComponentInChildren<AudioSource>();
+        source.clip = damageSound;
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         playerTransform = FindObjectOfType<Player>().transform;
@@ -91,8 +94,8 @@ public class Splitter : PlayerStatus, IDamageable
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
         FireProjectile(angle);
-        FireProjectile(angle - 20);
-        FireProjectile(angle + 20);
+        FireProjectile(angle - 30);
+        FireProjectile(angle + 30);
     }
     void FireProjectile(float angle)
     {
@@ -117,6 +120,7 @@ public class Splitter : PlayerStatus, IDamageable
     }
     public void Damage(float damage)
     {
+        source.Play();
         Life -= (int)damage;
     }
 }

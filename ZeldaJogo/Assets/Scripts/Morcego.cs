@@ -6,6 +6,8 @@ public class Morcego : PlayerStatus, IDamageable
 {
     [SerializeField] float cooldownToDamagePlayer;
     [SerializeField] bool canDamagePlayer;
+    [SerializeField] AudioClip damageSound;
+    AudioSource source;
     Rigidbody2D rb;
     Vector2 direction;
     Transform playerTransform;
@@ -13,6 +15,8 @@ public class Morcego : PlayerStatus, IDamageable
     {
         rb = GetComponent<Rigidbody2D>();
         playerTransform = FindObjectOfType<Player>().transform;
+        source = GetComponentInChildren<AudioSource>();
+        source.clip = damageSound;
     }
     void Start()
     {
@@ -39,8 +43,11 @@ public class Morcego : PlayerStatus, IDamageable
     {
         if (collision.gameObject.TryGetComponent(out IDamageable damageable) && canDamagePlayer)
         {
-            StartCoroutine(CanDamagePlayer());
-            damageable.Damage(1);
+            if (collision.gameObject.tag != "Bat" && collision.gameObject.tag != "Slime")
+            {
+                StartCoroutine(CanDamagePlayer());
+                damageable.Damage(1);
+            }
         }
     }
     IEnumerator CanDamagePlayer()
@@ -51,6 +58,7 @@ public class Morcego : PlayerStatus, IDamageable
     }
     public void Damage(float damage)
     {
+        source.Play();
         Life -= (int)damage;
     }
 }

@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -21,7 +20,6 @@ public class MenuManager : MonoBehaviour
     public void Sair()
     {
         Application.Quit();
-        EditorApplication.isPlaying = false;
     }
     public void PlayGame()
     {
