@@ -296,7 +296,7 @@ GameObject:
   - component: {fileID: 1507644322}
   m_Layer: 0
   m_Name: Sr. Bolota (2)
-  m_TagString: Untagged
+  m_TagString: Slime
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -473,7 +473,7 @@ GameObject:
   - component: {fileID: 1837987591}
   m_Layer: 0
   m_Name: Sr. Bolota (1)
-  m_TagString: Untagged
+  m_TagString: Slime
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -698,6 +698,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2333907706560264750, guid: fa2e88c1be1181c4bacff82d00ac4528, type: 3}
+      propertyPath: m_TagString
+      value: Sword
+      objectReference: {fileID: 0}
     - target: {fileID: 2333907708189695258, guid: fa2e88c1be1181c4bacff82d00ac4528, type: 3}
       propertyPath: m_Pivot.x
       value: 0

@@ -1,17 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class CamController : MonoBehaviour
 {
-    Camera cam;
-    Transform camPos;
+    [SerializeField]Camera cam;
+    [SerializeField] Transform camPos;
     [SerializeField] float roomSize;
     [SerializeField] float duration;
-    void Start()
+    private void Awake()
     {
         cam = Camera.main;
         camPos = Camera.main.transform;
+    }
+    void Start()
+    {
+        
     }
     void Update()
     {
@@ -37,6 +42,7 @@ public class CamController : MonoBehaviour
     }
     public IEnumerator MoveToDesiredLocation(Vector3 targetPos)
     {
+        camPos.SetParent(null);
         cam.orthographicSize = roomSize;
         float iterador = 0;
         targetPos.z = -10;
