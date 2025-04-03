@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  dontAttackName: Sr. Bolota
+  dontAttackName: Slime
 --- !u!95 &2631071660047988838
 Animator:
   serializedVersion: 5

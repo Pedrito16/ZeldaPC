@@ -53,15 +53,6 @@ public class Splitter : PlayerStatus, IDamageable
             spriteRenderer.flipX = true;
         else if(distance < 0)
             spriteRenderer.flipX = false;
-        direction = playerTransform.position - transform.position;
-        direction = direction.normalized;
-        if (Vector2.Distance(transform.position, playerTransform.position) > 0.5f)
-        {
-            rb.velocity = direction * Speed;
-        }
-        else
-            rb.velocity = Vector2.zero;
-
 
         timer += Time.deltaTime;
         if (timer >= maxTime)
@@ -76,6 +67,17 @@ public class Splitter : PlayerStatus, IDamageable
             DropItemOnDeath();
             Destroy(gameObject);
         }
+    }
+    void FixedUpdate()
+    {
+        direction = playerTransform.position - transform.position;
+        direction = direction.normalized;
+        if (Vector2.Distance(transform.position, playerTransform.position) > 0.5f)
+        {
+            rb.velocity = direction * Speed;
+        }
+        else
+            rb.velocity = Vector2.zero;
     }
     #region ShootDirection
     void ShootPlayerPos()
@@ -104,7 +106,8 @@ public class Splitter : PlayerStatus, IDamageable
         if(item != null)
         {
             int randomNumber = Random.Range(1, 10);
-            if (randomNumber <= 4)
+            print(randomNumber);
+            if (randomNumber <= 5)
             {
                 Instantiate(item, transform.position, transform.rotation);
             }

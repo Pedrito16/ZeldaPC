@@ -6,10 +6,10 @@ using UnityEngine;
 public class GiveDamage : MonoBehaviour
 {
     [SerializeField] int damage;
-    string dontAttackName;
+    [SerializeField] string dontAttackName;
     void Start()
     {
-        dontAttackName = gameObject.tag;
+        
     }
 
     

@@ -34,7 +34,7 @@ public class ShowLife : MonoBehaviour
         else if(player.Life == 2)
         {
             print("RestoringLife: " + player.Life);
-            hearts[player.Life].sprite = sprites[1];
+            hearts[player.Life - 1].sprite = sprites[1];
         }
             
     }

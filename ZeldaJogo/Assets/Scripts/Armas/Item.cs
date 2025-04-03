@@ -17,4 +17,8 @@ public abstract class Item : MonoBehaviour
     {
 
     }
+    public virtual void Atacar()
+    {
+
+    }
 }

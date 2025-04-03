@@ -4,7 +4,7 @@ using TMPro;
 public class InventoryController : MonoBehaviour
 {
     [Header("Essenciais")]
-    [SerializeField] Transform weaponSlot;
+    [SerializeField] public Transform weaponSlot;
     [SerializeField] Transform[] slots;
     [SerializeField] GameObject inventory;
     [SerializeField] Transform selectionBox;
@@ -71,10 +71,10 @@ public class InventoryController : MonoBehaviour
         }else
             useText.gameObject.SetActive(false);
     }
-    public bool CheckIfHasWeapon()
-    {
-        return weaponSlot.childCount > 0;
-    }
+        public Item CheckIfHasWeapon()
+        {
+            return weaponSlot.GetComponentInChildren<Item>();
+        }
     IEnumerator moveSelect(Vector3 newPos)
     {
         float iterador = 0;

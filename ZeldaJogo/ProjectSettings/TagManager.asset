@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Slime
+  - CamLock
+  - Book
+  - Sword
+  - Projetil
   layers:
   - Default
   - TransparentFX
@@ -39,6 +43,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Tilemaps
+    uniqueID: 2618495501
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

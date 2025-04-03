@@ -9,6 +9,10 @@ public class Pão : Item
     [SerializeField] int regenLife;
     [SerializeField] AudioSource eatingSource;
 
+    private void Awake()
+    {
+        player = FindObjectOfType<Player>();
+    }
     void Start()
     {
         eatingSource = InventoryController.instance.audioSource;
