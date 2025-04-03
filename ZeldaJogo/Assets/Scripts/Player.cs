@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ public class Player : PlayerStatus, IDamageable
 {
     public delegate  void TakeDamage();
     public TakeDamage takeDamage;
+    
     [SerializeField] float invencibilityTime;
     Rigidbody2D rb;
     Animator animator;
@@ -15,6 +17,7 @@ public class Player : PlayerStatus, IDamageable
     public bool canRegenLife;
     public bool isShielded;
     public bool isInvencible;
+    public static bool isDead;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -30,6 +33,11 @@ public class Player : PlayerStatus, IDamageable
 
         animator.SetFloat("Horizontal", horizontal);
         animator.SetFloat("Vertical", vertical);
+        if(Life <= 0)
+        {
+            isDead = true;
+            gameObject.SetActive(false);
+        }
     }
     IEnumerator Invencibility()
     {

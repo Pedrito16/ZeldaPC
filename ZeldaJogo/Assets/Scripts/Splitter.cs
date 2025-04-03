@@ -75,6 +75,8 @@ public class Splitter : PlayerStatus, IDamageable
         if (Vector2.Distance(transform.position, playerTransform.position) > 0.5f)
         {
             rb.velocity = direction * Speed;
+            //rb.AddForce(direction * Speed);
+            //rb.velocity = Vector2.ClampMagnitude(rb.velocity, 5f);
         }
         else
             rb.velocity = Vector2.zero;
@@ -107,7 +109,7 @@ public class Splitter : PlayerStatus, IDamageable
         {
             int randomNumber = Random.Range(1, 10);
             print(randomNumber);
-            if (randomNumber <= 5)
+            if (randomNumber <= 3)
             {
                 Instantiate(item, transform.position, transform.rotation);
             }

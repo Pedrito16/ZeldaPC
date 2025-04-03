@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
@@ -15,10 +16,12 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] float attackTime;
     [SerializeField] float projectileSpeed;
     [SerializeField] float protectionTime;
+    [SerializeField] float protectionCooldown;
 
     [Header("Debug")]
     [SerializeField] Vector2 lastPlayerMove;
     [SerializeField] bool hasWeapon;
+    [SerializeField] bool canProtect;
     //variaveis invisiveis
     Coroutine attackRoutine;
     GameObject escudo;
@@ -67,10 +70,16 @@ public class PlayerAttack : MonoBehaviour
                 attackRoutine = StartCoroutine(Atacar());
             }
         }
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && canProtect)
         {
             StartCoroutine(Protect());
         }       
+    }
+    IEnumerator ProtectionCooldown()
+    {
+        canProtect = false;
+        yield return new WaitForSeconds(protectionCooldown);
+        canProtect = true;
     }
     IEnumerator Protect()
     {
@@ -79,6 +88,7 @@ public class PlayerAttack : MonoBehaviour
         yield return new WaitForSeconds(protectionTime);
         escudo.SetActive(false);
         player.isShielded = false;
+        StartCoroutine(ProtectionCooldown());
     }
     private void LateUpdate()
     {

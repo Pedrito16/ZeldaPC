@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2631071660047988838}
   - component: {fileID: 2631071660047988839}
   - component: {fileID: 3424785931031722608}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Machado
   m_TagString: Untagged
   m_Icon: {fileID: 0}
